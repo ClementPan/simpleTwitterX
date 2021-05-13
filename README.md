@@ -1,5 +1,7 @@
 # simple-twitter
 
+Demo: https://clementpan.github.io/simpleTwitterX
+
 ## Project setup
 ```
 npm install
