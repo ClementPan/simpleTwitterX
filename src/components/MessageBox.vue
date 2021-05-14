@@ -20,7 +20,7 @@
         <Spinner v-if="isProcessing"></Spinner>
         <template v-else>
           <div v-if="!messageList.length" class="emptyList">
-            <img src="../assets/conversation.svg" alt="" />
+            <img src="../assets/image/conversation.svg" alt="" />
           </div>
           <!--  -->
           <template v-else v-for="item of messageList">
@@ -69,7 +69,7 @@
         class="btn sendBtn"
         @click="sendMessage"
       >
-        <img src="../assets/send.svg" alt="" />
+        <img src="../assets/image/send.svg" alt="" />
       </button>
     </div>
   </div>

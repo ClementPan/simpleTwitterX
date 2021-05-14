@@ -2,9 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 // global css
-import './assets/application.css'
+import './assets/css/application.css'
 // reset.css
-import './assets/reset.css'
+import './assets/css/reset.css'
 // import fontawesome
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'

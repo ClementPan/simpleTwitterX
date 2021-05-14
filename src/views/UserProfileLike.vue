@@ -5,7 +5,7 @@
     <div class="mainSection">
       <div class="title">
         <button class="btn" @click="$router.back()">
-          <img src="../assets/lastPage.svg" alt="" />
+          <img src="../assets/image/lastPage.svg" alt="" />
         </button>
         <div class="nameTag">
           <p>{{ user.name }}</p>

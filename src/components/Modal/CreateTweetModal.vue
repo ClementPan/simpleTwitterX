@@ -18,7 +18,7 @@
             @click="tweetContent = ''"
           >
             <span aria-hidden="true"
-              ><img src="../../assets/close.svg" alt=""
+              ><img src="../../assets/image/close.svg" alt=""
             /></span>
           </button>
         </div>

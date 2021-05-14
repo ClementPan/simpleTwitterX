@@ -15,7 +15,7 @@
           </div>
           <button type="button" class="start btn" @click="closeModal">
             <span aria-hidden="true" data-dismiss="modal" aria-label="Close"
-              ><img src="../../assets/close.svg" alt=""
+              ><img src="../../assets/image/close.svg" alt=""
             /></span>
           </button>
         </div>

@@ -8,7 +8,7 @@
         <div class="title">
           <div class="pre-page">
             <button class="btn" @click="$router.back()">
-              <img src="../assets/lastPage.svg" alt="" />
+              <img src="../assets/image/lastPage.svg" alt="" />
             </button>
           </div>
           <div class="title-info">
@@ -70,7 +70,7 @@ export default {
       if (this.fetchingData) next();
       const { id } = to.params;
       await this.fetchUser(id);
-      this.fetchFollowings(id)
+      this.fetchFollowings(id);
       next();
     } catch (error) {
       console.log(error);

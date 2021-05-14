@@ -8,7 +8,7 @@
         <div class="title">
           <div class="pre-page">
             <button class="btn" @click="$router.back()">
-              <img src="../assets/lastPage.svg" alt="" />
+              <img src="../assets/image/lastPage.svg" alt="" />
             </button>
           </div>
           <div class="title-info">
@@ -56,7 +56,7 @@ export default {
         // console.log("fetchUser @ beforeRouteEnter");
         const { id } = to.params;
         vm.fetchUser(id);
-        vm.fetchFollowers(id)
+        vm.fetchFollowers(id);
         vm.fetchingData = true;
       });
     } catch (error) {
@@ -92,7 +92,7 @@ export default {
   methods: {
     async fetchUser(userId) {
       try {
-        const { data } = await usersAPI.getUser( userId );
+        const { data } = await usersAPI.getUser(userId);
         this.user = data;
         this.isLoading = false;
       } catch (error) {
@@ -106,7 +106,7 @@ export default {
     },
     async fetchFollowers(userId) {
       try {
-        const { data } = await usersAPI.getUserFollowers( userId );
+        const { data } = await usersAPI.getUserFollowers(userId);
         this.followers = data;
         this.isLoading = false;
       } catch (error) {

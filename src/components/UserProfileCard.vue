@@ -55,7 +55,7 @@
         <div v-else class="btnPanel">
           <div>
             <button class="btn message" @click="showModal('#messageModal')">
-              <img src="../assets/btn_message.svg" alt="" />
+              <img src="../assets/image/btn_message.svg" alt="" />
             </button>
           </div>
           <div>
@@ -65,7 +65,7 @@
               :disabled="isProcessing"
               @click.prevent.stop="deleteSubscribe(localUserData)"
             >
-              <img src="../assets/btn_noti_active.svg" alt="" />
+              <img src="../assets/image/btn_noti_active.svg" alt="" />
             </button>
             <button
               v-else
@@ -73,7 +73,7 @@
               :disabled="isProcessing"
               @click.prevent.stop="addSubscribe(localUserData)"
             >
-              <img src="../assets/btn_noti.svg" alt="" />
+              <img src="../assets/image/btn_noti.svg" alt="" />
             </button>
           </div>
           <div>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="logo">
-      <img src="../assets/logo.png" alt="" />
+      <img src="../assets/image/logo.png" alt="" />
     </div>
     <div class="title">
       <h1>建立你的帳號</h1>

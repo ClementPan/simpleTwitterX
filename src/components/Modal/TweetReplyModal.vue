@@ -18,7 +18,7 @@
             @click="clearReplyContent"
           >
             <span aria-hidden="true"
-              ><img src="../../assets/close.svg" alt=""
+              ><img src="../../assets/image/close.svg" alt=""
             /></span>
           </button>
         </div>
@@ -142,13 +142,13 @@ export default {
         // call api to create tweet reply
         const { data } = await tweetsAPI.createReply(tweetId, payload);
         const { ReplyId } = data;
-        const id = ReplyId
- 
+        const id = ReplyId;
+
         if (data.status !== "success") {
           throw new Error(data.message);
         }
 
-        console.log("replyId", ReplyId)
+        console.log("replyId", ReplyId);
         const { id: userId } = this.$route.params;
         this.$socket.emit("reply", {
           userId,

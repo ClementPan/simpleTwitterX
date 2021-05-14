@@ -18,7 +18,7 @@
               aria-label="Close"
               @click="clearForm"
             >
-              <img src="../../assets/close.svg" alt="" />
+              <img src="../../assets/image/close.svg" alt="" />
             </button>
 
             <p class="title">編輯個人資料</p>
@@ -36,7 +36,7 @@
               <div class="coverImagePanel-btns">
                 <div class="uploadPhoto">
                   <label for="coverInput">
-                    <img src="../../assets/uploadPhoto.svg" alt="" />
+                    <img src="../../assets/image/uploadPhoto.svg" alt="" />
                   </label>
                   <input
                     id="coverInput"
@@ -50,7 +50,7 @@
                 <div class="deletePhoto">
                   <img
                     @click="deleteCover"
-                    src="../../assets/deletePhoto.svg"
+                    src="../../assets/image/deletePhoto.svg"
                     alt=""
                   />
                 </div>
@@ -62,7 +62,7 @@
               </div>
               <div class="uploadPhoto">
                 <label for="avatarInput">
-                  <img src="../../assets/uploadPhoto.svg" alt="" />
+                  <img src="../../assets/image/uploadPhoto.svg" alt="" />
                 </label>
                 <input
                   id="avatarInput"

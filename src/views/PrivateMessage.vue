@@ -11,7 +11,7 @@
           <h1>訊息</h1>
           <div class="newMessage">
             <button type="button" class="btn" @click="showModal">
-              <img src="../assets/newMessage.svg" alt="" />
+              <img src="../assets/image/newMessage.svg" alt="" />
             </button>
           </div>
 

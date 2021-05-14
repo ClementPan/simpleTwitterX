@@ -41,7 +41,7 @@
       <div class="tweetPanel">
         <div class="comments">
           <img
-            src="../assets/commentCount.svg"
+            src="../assets/image/commentCount.svg"
             alt=""
             @click="showModal(localTweet.id)"
           />
@@ -53,13 +53,13 @@
           <img
             v-if="!localTweet.isLiked"
             :class="{ liked: localTweet.isLiked }"
-            src="../assets/likeCount.svg"
+            src="../assets/image/likeCount.svg"
             alt=""
             @click="toggleLike(localTweet)"
           />
           <img
             v-else
-            src="../assets/likedLikeCount.svg"
+            src="../assets/image/likedLikeCount.svg"
             alt=""
             @click="toggleLike(localTweet)"
           />
@@ -125,7 +125,7 @@ export default {
           tweet.likeCount += 1;
           // call api to like this tweet by user
           response = await tweetsAPI.likeTweet(tweet.id);
-          
+
           const { id: userId } = this.$route.params;
           this.$socket.emit("like", {
             userId,

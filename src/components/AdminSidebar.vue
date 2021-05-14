@@ -2,14 +2,14 @@
   <div class="userSidebar">
     <div class="logo">
       <router-link to="/main">
-        <img src="../assets/logo.png" alt="" />
+        <img src="../assets/image/logo.png" alt="" />
       </router-link>
     </div>
     <div class="buttonList">
       <div class="navItem index">
         <div class="icon">
-          <img v-if="tweets" src="../assets/atHome.svg" alt="" />
-          <img v-else src="../assets/home.svg" alt="" />
+          <img v-if="tweets" src="../assets/image/atHome.svg" alt="" />
+          <img v-else src="../assets/image/home.svg" alt="" />
         </div>
         <button class="btn">
           <router-link to="/admin/tweets">
@@ -19,8 +19,8 @@
       </div>
       <div class="navItem userProfile">
         <div class="icon">
-          <img v-if="users" src="../assets/atProfile.svg" alt="" />
-          <img v-else src="../assets/profile.svg" alt="" />
+          <img v-if="users" src="../assets/image/atProfile.svg" alt="" />
+          <img v-else src="../assets/image/profile.svg" alt="" />
         </div>
         <button class="btn">
           <router-link to="/admin/users">
@@ -31,7 +31,7 @@
 
       <div class="navItem logout">
         <div class="icon">
-          <img src="../assets/logout.svg" alt="" />
+          <img src="../assets/image/logout.svg" alt="" />
         </div>
         <button class="btn" @click.stop.prevent="logout">
           <p>登出</p>

@@ -15,7 +15,7 @@
             data-dismiss="modal"
             aria-label="Close"
           >
-            <img src="../../assets/close.svg" alt="" />
+            <img src="../../assets/image/close.svg" alt="" />
           </button>
 
           <p class="title">傳送訊息給 {{ localUserData.name }}</p>

@@ -33,7 +33,7 @@
         <img
           data-toggle="modal"
           :data-target="`#tweetReplyModal-${localData.id}`"
-          src="../../assets/commentCount.svg"
+          src="../../assets/image/commentCount.svg"
           alt=""
         />
       </div>
@@ -45,13 +45,13 @@
         <img
           v-if="!localData.isLiked"
           :class="{ liked: localData.isLiked }"
-          src="../../assets/likeCount.svg"
+          src="../../assets/image/likeCount.svg"
           alt=""
           @click="toggleLike()"
         />
         <img
           v-else
-          src="../../assets/likedLikeCount.svg"
+          src="../../assets/image/likedLikeCount.svg"
           alt=""
           @click="toggleLike()"
         />

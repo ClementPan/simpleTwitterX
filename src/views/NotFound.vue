@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="logo">
-      <img src="../assets/logo.png" alt="" />
+      <img src="../assets/image/logo.png" alt="" />
     </div>
     <h1>404 Not Found</h1>
   </div>

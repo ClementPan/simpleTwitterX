@@ -2,7 +2,7 @@
   <div class="container">
     <form @submit.prevent.stop="handleSubmit">
       <div class="logo">
-        <img src="../assets/logo.png" alt="" />
+        <img src="../assets/image/logo.png" alt="" />
       </div>
       <div class="title">
         <h1>登入 Alphitter</h1>

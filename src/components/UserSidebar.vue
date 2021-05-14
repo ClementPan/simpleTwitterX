@@ -2,18 +2,18 @@
   <div class="userSidebar">
     <div class="logo">
       <router-link to="/main">
-        <img src="../assets/logo.png" alt="" />
+        <img src="../assets/image/logo.png" alt="" />
       </router-link>
     </div>
     <div class="buttonList">
       <div class="navItem index">
         <div v-if="location === 'main'" class="icon">
           <!-- 橘色 -->
-          <img src="../assets/atHome.svg" alt="" />
+          <img src="../assets/image/atHome.svg" alt="" />
         </div>
         <div v-else class="icon">
           <!-- 黑色 -->
-          <img src="../assets/home.svg" alt="" />
+          <img src="../assets/image/home.svg" alt="" />
         </div>
         <button class="btn">
           <router-link to="/main">
@@ -28,9 +28,17 @@
 
       <div class="navItem notification">
         <div class="icon">
-          <img v-if="this.noti.length > 0" src="../assets/getNoti.svg" alt="" />
-          <img v-else-if="notification" src="../assets/atNoti.svg" alt="" />
-          <img v-else src="../assets/noti.svg" alt="" />
+          <img
+            v-if="this.noti.length > 0"
+            src="../assets/image/getNoti.svg"
+            alt=""
+          />
+          <img
+            v-else-if="notification"
+            src="../assets/image/atNoti.svg"
+            alt=""
+          />
+          <img v-else src="../assets/image/noti.svg" alt="" />
         </div>
         <button class="btn">
           <router-link to="/notification">
@@ -93,10 +101,10 @@
 
       <div class="navItem userProfile">
         <div v-if="location === 'userProfile'" class="icon">
-          <img src="../assets/atProfile.svg" alt="" />
+          <img src="../assets/image/atProfile.svg" alt="" />
         </div>
         <div v-else class="icon">
-          <img src="../assets/profile.svg" alt="" />
+          <img src="../assets/image/profile.svg" alt="" />
         </div>
         <button class="btn">
           <router-link
@@ -115,10 +123,10 @@
       </div>
       <div class="navItem setting">
         <div v-if="location === 'accountEdit'" class="icon">
-          <img src="../assets/atSetting.svg" alt="" />
+          <img src="../assets/image/atSetting.svg" alt="" />
         </div>
         <div v-else class="icon">
-          <img src="../assets/setting.svg" alt="" />
+          <img src="../assets/image/setting.svg" alt="" />
         </div>
         <button class="btn">
           <router-link to="/accountEdit">
@@ -141,7 +149,7 @@
       </div>
       <div class="navItem logout">
         <div class="icon">
-          <img src="../assets/logout.svg" alt="" />
+          <img src="../assets/image/logout.svg" alt="" />
         </div>
         <button class="btn" @click.stop.prevent="logout">
           <p>登出</p>
