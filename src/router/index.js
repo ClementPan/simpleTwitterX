@@ -6,9 +6,6 @@ import NotFound from '../views/NotFound.vue'
 import AdminSignIn from '../views/AdminSignIn.vue'
 import store from './../store'
 
-// store
-// import store from '../store'
-
 Vue.use(VueRouter)
 
 const authorizeIsAdmin = (to, from, next) => {

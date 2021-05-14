@@ -5,9 +5,7 @@
 </template>
 
 <script>
-// bootstrap css
 import "bootstrap/dist/css/bootstrap.min.css";
-// bootstrap js
 import "bootstrap";
 import { mapState } from "vuex";
 export default {
