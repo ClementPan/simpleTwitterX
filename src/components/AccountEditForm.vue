@@ -2,7 +2,9 @@
   <form @submit.prevent.stop="handleSubmit($event)">
     <div class="row">
       <label for="account"
-        >帳號<span class="note ml-5">*帳號長度不得大於 50 字元</span></label
+        >帳號<span v-if="!inputCheck.account" class="note ml-5"
+          >*帳號長度不得大於 50 字元</span
+        ></label
       >
       <input
         id="account"
@@ -16,7 +18,9 @@
 
     <div class="row">
       <label for="name"
-        >名稱<span class="note ml-5">*名稱長度不得大於 50 字元</span></label
+        >名稱<span v-if="!inputCheck.name" class="note ml-5"
+          >*名稱長度不得大於 50 字元</span
+        ></label
       >
       <input
         id="name"
@@ -30,7 +34,9 @@
 
     <div class="row">
       <label for="email"
-        >Email<span class="note ml-5">*信箱長度不得大於 50 字元</span></label
+        >Email<span v-if="!inputCheck.email" class="note ml-5"
+          >*信箱長度不得大於 50 字元</span
+        ></label
       >
       <input
         id="email"
@@ -44,7 +50,9 @@
 
     <div class="row">
       <label for="password"
-        >密碼<span class="note ml-5">*密碼長度需介於 4 和 12 之間</span></label
+        >密碼<span v-if="!inputCheck.password" class="note ml-5"
+          >*密碼長度需介於 4 和 12 之間</span
+        ></label
       >
       <input
         id="password"
@@ -57,7 +65,7 @@
     </div>
     <div class="row">
       <label for="passwordCheck"
-        >密碼確認<span class="note ml-3"
+        >密碼確認<span v-if="!inputCheck.checkPassword" class="note ml-3"
           >*密碼長度需介於 4 和 12 之間</span
         ></label
       >
@@ -66,6 +74,7 @@
         name="passwordCheck"
         type="password"
         v-model="form.checkPassword"
+        maxLength="12"
         required
       />
     </div>
@@ -108,8 +117,6 @@ export default {
   name: "AccountEditForm",
   props: {
     isSignUp: {
-      // if signUp => signUp => API POST: /users
-      // if not signUp => accountEdit => API PUT: /users/:id
       type: Boolean,
       default: true,
     },
@@ -129,6 +136,13 @@ export default {
       isProcessing: false,
       isSaved: true,
       userChanged: false,
+      inputCheck: {
+        account: true,
+        name: true,
+        email: true,
+        password: true,
+        checkPassword: true,
+      },
     };
   },
   methods: {
@@ -162,6 +176,7 @@ export default {
           icon: "info",
           title: "請填寫帳號！",
         });
+        this.inputCheck.account = false;
         return result;
       }
       if (!this.form.name) {
@@ -169,6 +184,7 @@ export default {
           icon: "info",
           title: "請填寫名稱！",
         });
+        this.inputCheck.name = false;
         return result;
       }
       if (!this.form.email) {
@@ -176,6 +192,7 @@ export default {
           icon: "info",
           title: "請填寫 Email！",
         });
+        this.inputCheck.email = false;
         return result;
       }
       if (!this.form.password) {
@@ -183,6 +200,7 @@ export default {
           icon: "info",
           title: "請填寫密碼！",
         });
+        this.inputCheck.password = false;
         return result;
       }
       if (this.form.password.length > 12 || this.form.password.length < 4) {
@@ -190,6 +208,7 @@ export default {
           icon: "info",
           title: "密碼長度不得小於 4 或超過 12！",
         });
+        this.inputCheck.password = false;
         return result;
       }
       if (!this.form.checkPassword) {
@@ -197,6 +216,7 @@ export default {
           icon: "info",
           title: "請填寫密碼確認！",
         });
+        this.inputCheck.checkPassword = false;
         return result;
       }
       if (this.form.password !== this.form.checkPassword) {
@@ -314,6 +334,7 @@ form {
   margin: 10px 0;
 }
 .row label {
+  position: relative;
   padding-left: 11px;
   color: #657786;
   font-weight: 700;
@@ -331,6 +352,9 @@ form {
 }
 
 .note {
+  position: absolute;
+  top: 0;
+  right: 0;
   font-size: 15px;
   color: #ff6600;
 }
