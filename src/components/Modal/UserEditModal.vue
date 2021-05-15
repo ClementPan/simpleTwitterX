@@ -281,7 +281,7 @@ p.title {
   /* width: 64px; */
   padding: 0px 14px;
   border-radius: 100px;
-  background: #ff6600;
+  background: var(--orange);
   position: absolute;
   right: 15px;
 }
@@ -289,7 +289,7 @@ p.title {
 .saveBtn p {
   height: 100%;
   margin: 0;
-  color: #fff;
+  color: var(--white);
   font-size: 18px;
   font-weight: 500;
 }
@@ -391,7 +391,7 @@ p.title {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 4px solid #fff;
+  border: 4px solid var(--white);
 }
 
 .avatarPanel .uploadPhoto {
@@ -444,7 +444,6 @@ p.title {
 
 .row textarea {
   resize: none;
-  /* outline: none; */
   border: none;
   border-bottom: 2px solid #657786;
 }

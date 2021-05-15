@@ -193,7 +193,7 @@ export default {
   align-items: center;
   position: sticky;
   top: 0;
-  background-color: #fff;
+  background-color: var(--white);
   z-index: 1;
 }
 
@@ -242,7 +242,7 @@ export default {
 .avatar {
   width: 50px;
   height: 50px;
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   border-radius: 50%;
 }
 .avatar img {
@@ -330,7 +330,7 @@ export default {
 .currentUser .textContainer .text {
   border-radius: 20px 20px 0 20px;
   background-color: hsl(24deg 100% 50%);
-  color: #fff;
+  color: var(--white);
 }
 .currentUser .textTime {
   margin: 0;

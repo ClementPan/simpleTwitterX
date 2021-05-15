@@ -68,7 +68,7 @@ export default {
       isProcessing: false,
     };
   },
-   computed: {
+  computed: {
     ...mapState(["currentUser"]),
   },
   watch: {
@@ -200,9 +200,9 @@ export default {
 }
 
 button {
-  border: 1px solid #ff6600;
+  border: 1px solid var(--orange);
   border-radius: 100px;
-  color: #ff6600;
+  color: var(--orange);
   margin-top: 7px;
   font-size: 15px;
   font-weight: 700;
@@ -210,8 +210,8 @@ button {
 
 .toggleFollow .isFollowing {
   width: 92px;
-  background-color: #ff6600;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
 }
 .follower-info p {
   margin: 0;

@@ -331,7 +331,7 @@ export default {
 }
 
 .panel span {
-  color: #ff6600;
+  color: var(--orange);
 }
 
 /* myReply */
@@ -353,8 +353,8 @@ export default {
 .tweetButton .btn {
   min-width: 64px;
   height: 40px;
-  background-color: #ff6600;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
   border-radius: 100px;
   font-weight: 500;
   font-size: 18px;

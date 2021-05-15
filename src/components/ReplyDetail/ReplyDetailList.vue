@@ -221,7 +221,7 @@ p {
 
 .replyTarget span {
   font-weight: 500;
-  color: #ff6600;
+  color: var(--orange);
 }
 
 .textContent p {

@@ -10,8 +10,11 @@
 }
 
 :foot {
-  
+  --orange: #ff6600;
+  --white: #fff;
 }
+
+
 
 body {
   height: 100vh;
@@ -62,7 +65,7 @@ body {
 .stickyTitle {
   position: sticky;
   top: 0;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 .title h1 {

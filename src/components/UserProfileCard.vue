@@ -455,7 +455,7 @@ export default {
   height: 142px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  border: 4px solid #ffffff;
+  border: 4px solid var(--white) fff;
 }
 
 .card {
@@ -483,14 +483,14 @@ export default {
   right: 15px;
   height: 40px;
   width: 122px;
-  color: #ff6600;
-  border-color: #ff6600;
+  color: var(--orange);
+  border-color: var(--orange);
   border-radius: 100px;
 }
 
 .btn-edit-user:hover:hover {
-  color: #fff;
-  background-color: #ff6600;
+  color: var(--white);
+  background-color: var(--orange);
 }
 /* ////////////////////// */
 .btnPanel {
@@ -501,9 +501,9 @@ export default {
 }
 
 button {
-  /* border: 1px solid #ff6600; */
+  /* border: 1px solid var(--orange); */
   border-radius: 100px;
-  color: #ff6600;
+  color: var(--orange);
   font-weight: 700;
   font-size: 15px;
 }
@@ -519,8 +519,8 @@ button.btn {
 
 button.subscribed {
   margin: 0 10px;
-  background-color: #ff6600;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 .btn.follow,
@@ -530,14 +530,14 @@ button.subscribed {
 }
 
 .follow {
-  color: #ff6600;
-  background-color: #fff;
-  border: 1px solid #ff6600;
+  color: var(--orange);
+  background-color: var(--white);
+  border: 1px solid var(--orange);
 }
 
 .isFollowing {
-  background-color: #ff6600;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 /* ////////////////////// */

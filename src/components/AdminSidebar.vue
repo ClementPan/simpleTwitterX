@@ -100,7 +100,7 @@ export default {
   align-items: center;
 }
 .navItem .btn .active p {
-  color: #ff6600;
+  color: var(--orange);
 }
 /* .navItem .btn .active {
   border: 1px solid #000;
@@ -134,10 +134,10 @@ export default {
   width: 210px;
   height: 45px;
   border-radius: 100px;
-  background-color: #ff6600;
+  background-color: var(--orange);
 }
 .newTweet button p {
-  color: #fff;
+  color: var(--white);
 }
 .logout {
   position: absolute;

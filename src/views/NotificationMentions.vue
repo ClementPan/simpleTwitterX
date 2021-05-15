@@ -40,7 +40,7 @@ export default {
 .navtabs button {
   flex: 1;
   text-decoration: none;
-  background-color: #fff;
+  background-color: var(--white);
   border: none;
 }
 

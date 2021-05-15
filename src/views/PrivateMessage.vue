@@ -596,7 +596,7 @@ export default {
 .currentUser .textContainer .text {
   border-radius: 20px 20px 0 20px;
   background-color: hsl(24deg 100% 50%);
-  color: #fff;
+  color: var(--white);
 }
 
 .currentUser .textTime {

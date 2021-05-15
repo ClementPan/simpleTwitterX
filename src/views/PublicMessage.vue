@@ -161,7 +161,7 @@ export default {
 .avatar {
   width: 50px;
   height: 50px;
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   border-radius: 50%;
 }
 .avatar img {

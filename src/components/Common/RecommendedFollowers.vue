@@ -222,8 +222,6 @@ export default {
 
 .title h1 {
   font-size: 18px;
-  font-weight: 700;
-  margin: 0;
 }
 
 hr {
@@ -268,9 +266,9 @@ hr {
 }
 
 button {
-  border: 1px solid #ff6600;
+  border: 1px solid var(--orange);
   border-radius: 100px;
-  color: #ff6600;
+  color: var(--orange);
 }
 
 .toggleFollow button {
@@ -280,8 +278,8 @@ button {
 
 .toggleFollow .isFollowing {
   width: 92px;
-  background-color: #ff6600;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 .showMore {

@@ -87,8 +87,8 @@ export default {
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   border: none;
-  border-bottom: 1px solid #ff6600;
-  color: #ff6600;
+  border-bottom: 1px solid var(--orange);
+  color: var(--orange);
   font-weight: 700;
 }
 .nav-tabs .nav-link:hover {

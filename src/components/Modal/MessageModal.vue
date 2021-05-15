@@ -259,7 +259,7 @@ textarea {
 .send {
   position: absolute;
   right: 20px;
-  background-color: #ff6600;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
 }
 </style>

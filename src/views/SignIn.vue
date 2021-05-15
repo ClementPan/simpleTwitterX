@@ -170,8 +170,8 @@ input {
   height: 50px;
 }
 button.signin {
-  background-color: #ff6600;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
   font-size: 18px;
   font-weight: 700;
 }

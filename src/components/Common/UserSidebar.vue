@@ -287,7 +287,7 @@ export default {
 }
 
 .navItem .btn .located {
-  color: #ff6600;
+  color: var(--orange);
 }
 
 .icon {
@@ -326,10 +326,10 @@ export default {
   width: 210px;
   height: 45px;
   border-radius: 100px;
-  background-color: #ff6600;
+  background-color: var(--orange);
 }
 .newTweet button p {
-  color: #fff;
+  color: var(--white);
 }
 .logout {
   position: absolute;

@@ -376,7 +376,7 @@ form {
   top: 0;
   right: 0;
   font-size: 15px;
-  color: #ff6600;
+  color: var(--orange);
 }
 
 .btn {
@@ -386,8 +386,8 @@ form {
 }
 button.submit,
 button.update {
-  background-color: #ff6600;
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
   font-size: 18px;
   font-weight: 700;
 }

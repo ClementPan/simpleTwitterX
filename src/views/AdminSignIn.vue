@@ -167,8 +167,8 @@ input {
   margin-top: 0;
   width: 540px;
   height: 50px;
-  color: #fff;
-  background-color: #ff6600;
+  color: var(--white);
+  background-color: var(--orange);
   border-radius: 50px;
   border: orangered;
   font-size: 18px;
