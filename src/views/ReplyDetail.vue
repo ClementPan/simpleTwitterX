@@ -5,7 +5,7 @@
 
     <!-- ReplyDetail -->
     <div class="mainSection">
-      <div class="title">
+      <div class="title stickyTitle">
         <button class="btn" @click="$router.back()">
           <img src="../assets/image/lastPage.svg" alt="" />
         </button>
@@ -124,17 +124,6 @@ export default {
   display: block;
 }
 
-.title {
-  height: 55px;
-  border-bottom: 1px solid #e6ecf0;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-}
-
 .title .btn {
   padding: 0;
   height: 100%;
@@ -151,11 +140,5 @@ export default {
 
 .title img:hover {
   cursor: pointer;
-}
-
-.title h1 {
-  font-weight: 700;
-  font-size: 19px;
-  margin: 0;
 }
 </style>

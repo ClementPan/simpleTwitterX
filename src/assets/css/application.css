@@ -42,3 +42,23 @@ body {
 }
 
 /* title */
+
+.title {
+  height: 55px;
+  border-bottom: 1px solid #e6ecf0;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.stickyTitle {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+.title h1 {
+  font-weight: 700;
+  font-size: 19px;
+  margin: 0;
+}

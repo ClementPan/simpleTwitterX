@@ -3,7 +3,7 @@
     <!--  UserSidebar -->
     <UserSidebar />
     <div class="mainSection">
-      <div class="title">
+      <div class="title stickyTitle">
         <button class="btn" @click="$router.back()">
           <img src="../assets/image/lastPage.svg" alt="" />
         </button>
@@ -139,16 +139,7 @@ export default {
 }
 
 .title {
-  height: 55px;
-  border-bottom: 1px solid #e6ecf0;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
   z-index: 1;
-  /* z-index: 999; */
 }
 
 .title .btn {

@@ -132,8 +132,6 @@ export default {
 }
 
 .title {
-  display: flex;
-  height: 55px;
   margin-bottom: 10px;
 }
 

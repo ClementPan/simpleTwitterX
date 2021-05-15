@@ -3,7 +3,7 @@
     <!-- UserSidebar -->
     <UserSidebar></UserSidebar>
     <div class="mainSection">
-      <div class="title">
+      <div class="title stickyTitle">
         <h1>通知</h1>
       </div>
       <div class="noti-panel">
@@ -148,23 +148,6 @@ export default {
 
 .mainSection {
   overflow-y: scroll;
-}
-
-.title {
-  height: 55px;
-  border-bottom: 1px solid #e6ecf0;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-}
-
-.title h1 {
-  font-weight: 700;
-  font-size: 19px;
-  margin: 0;
 }
 
 .avatar {

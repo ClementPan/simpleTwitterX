@@ -7,7 +7,7 @@
     <div class="mainSection">
       <!-- onlineUserList -->
       <div class="usersOnline">
-        <div class="title">
+        <div class="title stickyTitle">
           <h1>訊息</h1>
           <div class="newMessage">
             <button type="button" class="btn" @click="showModal">
@@ -385,14 +385,6 @@ export default {
 
 .usersOnline .title,
 .messageBox .title {
-  border-bottom: 1px solid #e6ecf0;
-  height: 55px;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
   z-index: 1;
 }
 
@@ -407,12 +399,6 @@ export default {
 .messageBox .title p {
   margin: 0;
   color: hsl(207deg 14% 46%);
-}
-
-.title h1 {
-  font-weight: 700;
-  font-size: 19px;
-  margin: 0;
 }
 
 .newMessage {

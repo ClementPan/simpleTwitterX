@@ -7,7 +7,7 @@
     <div class="mainSection">
       <!-- onlineUserList -->
       <div class="usersOnline">
-        <div class="title">
+        <div class="title stickyTitle">
           <h1>上線使用者 ({{ onlineUsersCount }})</h1>
         </div>
         <div class="container">
@@ -151,20 +151,7 @@ export default {
   flex: 1;
 }
 .usersOnline .title {
-  border-bottom: 1px solid #e6ecf0;
-  height: 55px;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
   z-index: 1;
-}
-.title h1 {
-  font-weight: 700;
-  font-size: 19px;
-  margin: 0;
 }
 
 .usersOnline .container {

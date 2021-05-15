@@ -154,9 +154,9 @@ form {
 }
 .title h1 {
   width: 100%;
+  font-size: 23px;
   text-align: center;
   font-weight: 900;
-  font-size: 23px;
 }
 input {
   background-color: #f5f8fa;
