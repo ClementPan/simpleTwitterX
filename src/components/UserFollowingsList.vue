@@ -84,7 +84,7 @@ export default {
       try {
         // call api to toggle isFolloweda
         this.isProcessing = true;
-        const payload = { id: following.followingId };
+        const payload = following.followingId;
         const { data } = await usersAPI.followUser(payload);
         // console.log(data);
         if (data.status !== "success") {
@@ -117,8 +117,6 @@ export default {
       try {
         this.isProcessing = true;
         const { data } = await usersAPI.unfollowUser(following.followingId);
-        // console.log("followingId:", following.followingId);
-        // console.log("data", data);
         if (data.status !== "success") {
           throw new Error(data.message);
         }

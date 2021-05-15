@@ -6,7 +6,7 @@
     <hr />
     <div class="users">
       <ul class="usersList">
-        <spinner class="spinner" v-if="isProcessing"></spinner>
+        <spinner class="spinner" v-if="isLoading"></spinner>
         <template v-else>
           <li class="user" v-for="user of recommendedFollowers" :key="user.id">
             <div class="userContent">
@@ -82,20 +82,20 @@ export default {
   data() {
     return {
       recommendedFollowers: [],
-      isProcessing: true,
+      isLoading: true,
+      isProcessing: false,
     };
   },
   methods: {
     async fetchRecommendedFollowers() {
       try {
-        this.isProcessing = true;
+        this.isLoading = true;
         // call api to get recommended Followers data
         const { data } = await usersAPI.getRecommendedFollowers();
-        // console.log(data);
         this.recommendedFollowers = data;
-        this.isProcessing = false;
+        this.isLoading = false;
       } catch (error) {
-        this.isProcessing = false;
+        this.isLoading = false;
         console.log(error);
         Toast.fire({
           icon: "error",
@@ -107,9 +107,8 @@ export default {
       try {
         // call api to toggle isFolloweda
         this.isProcessing = true;
-        const payload = { id: user.id };
-        const { data } = await usersAPI.followUser(payload);
-        // console.log(data);
+        const userId = user.id;
+        const { data } = await usersAPI.followUser(userId);
 
         if (data.status !== "success") {
           throw new Error(data.message);
@@ -126,7 +125,6 @@ export default {
           title: "追蹤成功！",
         });
 
-        // const { id: userId } = this.$route.params;
         this.$socket.emit("follow", {
           userId: user.id,
           currentUserId: this.currentUser.id,
@@ -146,7 +144,6 @@ export default {
       try {
         this.isProcessing = true;
         const { data } = await usersAPI.unfollowUser(user.id);
-        // console.log(data);
 
         if (data.status !== "success") {
           throw new Error(data.message);

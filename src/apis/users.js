@@ -25,8 +25,8 @@ export default {
   getUserFollowings(userId) {
     return apiHelper.get(`/users/${userId}/followings`)
   },
-  followUser(payload) {
-    return apiHelper.post('/followships', payload)
+  followUser(userId) {
+    return apiHelper.post('/followships', { id: userId })
   },
   unfollowUser(userId) {
     return apiHelper.delete(`/followships/${userId}`)
