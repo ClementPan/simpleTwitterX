@@ -48,8 +48,6 @@
 import { Toast } from "../../utils/helpers";
 import { mapState } from "vuex";
 import socketsAPI from "../../apis/socket";
-// jquery for closing modal
-// import $ from "jquery";
 
 export default {
   name: "MessageModal",
@@ -82,29 +80,25 @@ export default {
       // 判斷有沒有聊過天
       try {
         const { data } = await socketsAPI.getRoomsByUser();
-        console.log("data");
-        console.log(data);
-        let hasSpoken = data.find(
+        const historyMessages = data.find(
           (each) => each.userId === this.localUserData.id
         );
-        console.log("hasSpoken");
-        console.log(hasSpoken);
+        let hasSpoken = historyMessages.length ? true : false;
 
         if (hasSpoken) {
-          let roomId = hasSpoken.roomId;
-          hasSpoken = true;
-          console.log("hasSpoken: " + hasSpoken);
+          // hasSpoken = true
+          let roomId = historyMessages.roomId;
           this.$socket.emit(
             "private chat message",
             {
-              roomId: hasSpoken.roomId,
+              roomId: historyMessages.roomId,
               userId: this.currentUser.id,
-              newMessage: hasSpoken,
+              newMessage: !hasSpoken,
               message,
             },
             () => {
               console.log("currentRoomId: " + roomId);
-              console.log(`private chat message, new: ${hasSpoken}`);
+              console.log(`private chat message, new: ${!hasSpoken}`);
             }
           );
           this.privateMessage = "";
@@ -114,11 +108,10 @@ export default {
             title: "已發送訊息",
           });
           console.log("currentRoomId: " + roomId);
-          console.log(`private chat message, new: ${hasSpoken}`);
+          console.log(`private chat message, new: ${!hasSpoken}`);
           return;
         } else {
-          hasSpoken = false;
-          console.log("hasSpoken: " + hasSpoken);
+          // hasSpoken = false;
           // create new room
           const roomId = await this.createNewChat(this.localUserData.id);
           this.joinPrivateRoom(roomId);
@@ -130,7 +123,7 @@ export default {
             {
               roomId: roomId,
               userId: this.currentUser.id,
-              newMessage: false,
+              newMessage: !hasSpoken,
               message,
             },
             () => {
@@ -139,7 +132,7 @@ export default {
             }
           );
           console.log("currentRoomId: " + this.currentRoomId);
-          console.log(`private chat message, new: ${hasSpoken}`);
+          console.log(`private chat message, new: ${!hasSpoken}`);
           this.privateMessage = "";
           this.processing = false;
 
