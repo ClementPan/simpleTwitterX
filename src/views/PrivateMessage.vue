@@ -369,11 +369,6 @@ export default {
 }
 
 .mainSection {
-  flex: 1;
-  width: 100%;
-  height: 100vh;
-  border-right: 1px solid #e6ecf0;
-  /* border: 3px solid red; */
   display: flex;
 }
 

@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <!-- // RecommendedFollowers -->
+    <!-- RecommendedFollowers -->
     <RecommendedFollowers />
   </div>
 </template>
@@ -122,48 +122,21 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
 #userProfileLike {
   display: flex;
   min-height: 100vh;
   justify-content: center;
 }
-#UserProfile {
+
+/* #UserProfile {
   display: flex;
   min-height: 100vh;
   justify-content: center;
-}
+} */
 
 .mainSection {
-  flex: 1;
-  width: 100%;
-  height: 100vh;
-  border-right: 1px solid #e6ecf0;
   overflow-y: scroll;
-  position: relative;
-}
-
-/* for Chrome, Safari and Opera */
-.mainSection {
-  -ms-overflow-style: scrollbar;
-  /* IE and Edge */
-  /* scrollbar-width: 8px; */
-  /* Firefox */
-}
-
-.mainSection::-webkit-scrollbar {
-  width: 8px;
-}
-
-.mainSection::-webkit-scrollbar-thumb {
-  background-color: #9197a3;
-  border-radius: 15px;
-}
-
-.mainSection::-webkit-scrollbar-track {
-  background-color: #ddd;
 }
 
 .title {
@@ -176,7 +149,6 @@ export default {
   top: 0;
   background-color: #fff;
   z-index: 1;
-  /* z-index: 999; */
 }
 
 .title .btn {

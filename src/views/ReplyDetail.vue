@@ -117,32 +117,7 @@ export default {
 }
 
 .mainSection {
-  flex: 1;
-  height: 100vh;
-  border-right: 1px solid #e6ecf0;
-  height: 100vh;
   overflow-y: scroll;
-}
-
-/* for Chrome, Safari and Opera */
-.mainSection {
-  -ms-overflow-style: scrollbar;
-  /* IE and Edge */
-  /* scrollbar-width: 8px; */
-  /* Firefox */
-}
-
-.mainSection::-webkit-scrollbar {
-  width: 8px;
-}
-
-.mainSection::-webkit-scrollbar-thumb {
-  background-color: #9197a3;
-  border-radius: 15px;
-}
-
-.mainSection::-webkit-scrollbar-track {
-  background-color: #ddd;
 }
 
 .recommendedFollowers {

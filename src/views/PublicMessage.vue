@@ -143,12 +143,9 @@ export default {
   display: flex;
 }
 .mainSection {
-  flex: 1;
-  width: 100%;
-  height: 100vh;
-  border-right: 1px solid #e6ecf0;
   display: flex;
 }
+
 .usersOnline {
   border-right: 1px solid #e6ecf0;
   flex: 1;

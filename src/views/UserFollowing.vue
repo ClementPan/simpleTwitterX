@@ -4,7 +4,7 @@
     <template v-else>
       <!-- // UserSidebar -->
       <UserSidebar />
-      <div class="UserFollowersPanel">
+      <div class="mainSection">
         <div class="title">
           <div class="pre-page">
             <button class="btn" @click="$router.back()">
@@ -129,13 +129,6 @@ export default {
   justify-content: center;
   min-height: 100vh;
   width: auto;
-}
-
-.UserFollowersPanel {
-  flex: 1;
-  min-width: 600px;
-  max-width: 600px;
-  border-right: 1px solid #e6ecf0;
 }
 
 .title {
