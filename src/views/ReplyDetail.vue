@@ -1,5 +1,5 @@
 <template>
-  <div class="replyDetailContent">
+  <div class="replyDetailContent flex">
     <!-- UserSidebar -->
     <UserSidebar></UserSidebar>
 
@@ -112,7 +112,6 @@ export default {
 
 <style scoped>
 .replyDetailContent {
-  display: flex;
   overflow-y: hidden;
 }
 

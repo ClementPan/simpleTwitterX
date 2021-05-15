@@ -1,5 +1,5 @@
 <template>
-  <div id="UserFollowers">
+  <div id="UserFollowers flex">
     <Spinner v-if="isLoading" />
     <template v-else>
       <!-- // UserSidebar -->
@@ -124,7 +124,6 @@ export default {
 
 <style scoped>
 #UserFollowers {
-  display: flex;
   justify-content: center;
   min-height: 100vh;
   width: auto;

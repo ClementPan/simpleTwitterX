@@ -1,10 +1,10 @@
 <template>
-  <div class="publicMessage">
+  <div class="publicMessage flex">
     <!-- UserSidebar -->
     <UserSidebar></UserSidebar>
 
     <!-- mainSection -->
-    <div class="mainSection">
+    <div class="mainSection flex">
       <!-- onlineUserList -->
       <div class="usersOnline">
         <div class="title stickyTitle">
@@ -363,15 +363,6 @@ export default {
 </script>
 
 <style scoped>
-.publicMessage {
-  display: flex;
-  /* border: 1px solid #000; */
-}
-
-.mainSection {
-  display: flex;
-}
-
 .usersOnline {
   border-right: 1px solid #e6ecf0;
   flex: 1;

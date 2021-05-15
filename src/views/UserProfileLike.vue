@@ -1,5 +1,5 @@
 <template>
-  <div id="userProfileLike">
+  <div id="userProfileLike flex">
     <!-- UserSidebar -->
     <UserSidebar />
     <div class="mainSection">
@@ -124,16 +124,9 @@ export default {
 
 <style scoped>
 #userProfileLike {
-  display: flex;
   min-height: 100vh;
   justify-content: center;
 }
-
-/* #UserProfile {
-  display: flex;
-  min-height: 100vh;
-  justify-content: center;
-} */
 
 .mainSection {
   overflow-y: scroll;

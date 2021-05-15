@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main flex">
     <!-- UserSidebar -->
     <UserSidebar></UserSidebar>
     <!-- Main -->
@@ -125,10 +125,6 @@ export default {
 </script>
 
 <style scoped>
-.main {
-  display: flex;
-}
-
 .mainSection {
   overflow-y: scroll;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div id="userProfile">
+  <div id="userProfile flex">
     <!--  UserSidebar -->
     <UserSidebar />
     <div class="mainSection">
@@ -129,7 +129,6 @@ export default {
 
 <style scoped>
 #userProfile {
-  display: flex;
   min-height: 100vh;
   justify-content: center;
 }

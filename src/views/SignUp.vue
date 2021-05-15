@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container flex">
     <div class="logo">
       <img src="../assets/image/logo.png" alt="" />
     </div>
@@ -25,7 +25,6 @@ export default {
 
 <style scoped>
 .container {
-  display: flex;
   flex-direction: column;
   align-items: center;
 }

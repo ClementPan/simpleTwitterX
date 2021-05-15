@@ -13,6 +13,10 @@ body {
   height: 100vh;
 }
 
+.flex {
+  display: flex;
+}
+
 .mainSection {
   flex: 1;
   min-width: 500px;
@@ -62,3 +66,5 @@ body {
   font-size: 19px;
   margin: 0;
 }
+
+/* avatar */

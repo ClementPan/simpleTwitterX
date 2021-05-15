@@ -1,12 +1,12 @@
 <template>
-  <div class="notification">
+  <div class="notification flex">
     <!-- UserSidebar -->
     <UserSidebar></UserSidebar>
     <div class="mainSection">
       <div class="title stickyTitle">
         <h1>通知</h1>
       </div>
-      <div class="navtabs">
+      <div class="navtabs flex">
         <button>
           <router-link to="/notification">全部</router-link>
         </button>
@@ -33,12 +33,7 @@ export default {
 </script>
 
 <style scoped>
-.notification {
-  display: flex;
-}
-
 .navtabs {
-  display: flex;
   flex-direction: row;
 }
 

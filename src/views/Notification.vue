@@ -1,5 +1,5 @@
 <template>
-  <div class="notification">
+  <div class="notification flex">
     <!-- UserSidebar -->
     <UserSidebar></UserSidebar>
     <div class="mainSection">
@@ -142,10 +142,6 @@ export default {
 </script>
 
 <style scoped>
-.notification {
-  display: flex;
-}
-
 .mainSection {
   overflow-y: scroll;
 }
