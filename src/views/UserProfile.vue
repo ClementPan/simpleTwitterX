@@ -1,5 +1,5 @@
 <template>
-  <div id="userProfile flex">
+  <div id="userProfile">
     <!--  UserSidebar -->
     <UserSidebar />
     <div class="mainSection">
@@ -29,7 +29,6 @@
 
 <script>
 import UserSidebar from "./../components/Common/UserSidebar";
-// import UserProfileCard from "./../components/UserProfileCard";
 import UserProfileCard from "./../components/UserProfileCard";
 import UserProfileNavtabs from "./../components/UserProfileList/UserProfileNavtabs";
 import UserProfileTweetsList from "./../components/UserProfileList/UserProfileTweetsList";
@@ -129,6 +128,7 @@ export default {
 
 <style scoped>
 #userProfile {
+  display: flex;
   min-height: 100vh;
   justify-content: center;
 }
@@ -175,7 +175,6 @@ export default {
 
 .admin-users-card {
   position: relative;
-  /* work with z-index */
   z-index: 0;
 }
 </style>

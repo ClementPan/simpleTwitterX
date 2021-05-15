@@ -333,7 +333,6 @@ export default {
   color: #fff;
 }
 .currentUser .textTime {
-  /* border: 1px solid #000; */
   margin: 0;
   margin: 10px 10px 0;
 }
