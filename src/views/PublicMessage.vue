@@ -44,9 +44,9 @@
 </template>
 
 <script>
-import UserSidebar from "../components/UserSidebar";
+import UserSidebar from "../components/Common/UserSidebar";
 import MessageBox from "../components/MessageBox";
-import Spinner from "../components/Spinner";
+import Spinner from "../components/Common/Spinner";
 import { fromNowFilter } from "../utils/mixins";
 import { emptyImageFilter } from "../utils/mixins";
 import { Toast } from "../utils/helpers";

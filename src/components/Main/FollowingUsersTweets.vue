@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import TweetItem from "../TweetItem";
+import TweetItem from "../Common/TweetItem";
 export default {
   name: "FollowingUsersTweets",
   components: {

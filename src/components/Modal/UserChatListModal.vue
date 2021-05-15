@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import Spinner from "../Spinner";
+import Spinner from "../Common/Spinner";
 import { emptyImageFilter } from "../../utils/mixins";
 import $ from "jquery";
 

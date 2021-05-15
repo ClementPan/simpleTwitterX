@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import UserSidebar from "../components/UserSidebar";
-import RecommendedFollowers from "../components/RecommendedFollowers";
+import UserSidebar from "../components/Common/UserSidebar";
+import RecommendedFollowers from "../components/Common/RecommendedFollowers";
 import ReplyDetailContent from "../components/ReplyDetail/ReplyDetailContent";
 import ReplyDetailList from "../components/ReplyDetail/ReplyDetailList";
 // import { mapState } from "vuex";

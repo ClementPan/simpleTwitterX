@@ -74,10 +74,10 @@
 </template>
 
 <script>
-import UserSidebar from "../components/UserSidebar";
+import UserSidebar from "../components/Common/UserSidebar";
 import UserChatListModal from "../components/Modal/UserChatListModal";
 import MessageBox from "../components/MessageBox";
-import Spinner from "../components/Spinner";
+import Spinner from "../components/Common/Spinner";
 import { Toast } from "../utils/helpers";
 import { fromNowFilter } from "../utils/mixins";
 import { emptyImageFilter } from "../utils/mixins";

@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import UserSidebar from "../components/UserSidebar";
-import RecommededFollowers from "../components/RecommendedFollowers";
+import UserSidebar from "../components/Common/UserSidebar";
+import RecommededFollowers from "../components/Common/RecommendedFollowers";
 
 export default {
   name: "notification-mentions",

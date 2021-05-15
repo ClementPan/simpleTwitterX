@@ -47,7 +47,6 @@
 </template>
 
 <script>
-// import TweetItem from "../TweetItem";
 import { emptyImageFilter } from "../../utils/mixins";
 import { fromNowFilter } from "../../utils/mixins";
 import usersAPI from "../../apis/users";

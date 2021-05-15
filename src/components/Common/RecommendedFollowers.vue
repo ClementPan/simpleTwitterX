@@ -60,9 +60,9 @@
 
 <script>
 import Spinner from "./Spinner";
-import usersAPI from "../apis/users";
-import { emptyImageFilter } from "../utils/mixins";
-import { Toast } from "../utils/helpers";
+import usersAPI from "../../apis/users";
+import { emptyImageFilter } from "../../utils/mixins";
+import { Toast } from "../../utils/helpers";
 import { mapState } from "vuex";
 
 export default {

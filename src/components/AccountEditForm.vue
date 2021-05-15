@@ -179,10 +179,26 @@ export default {
         this.inputCheck.account = false;
         return result;
       }
+      if (this.form.account.length > 50) {
+        Toast.fire({
+          icon: "info",
+          title: "帳號長度不得大於 50 個字元！",
+        });
+        this.inputCheck.account = false;
+        return result;
+      }
       if (!this.form.name) {
         Toast.fire({
           icon: "info",
           title: "請填寫名稱！",
+        });
+        this.inputCheck.name = false;
+        return result;
+      }
+      if (!this.form.name) {
+        Toast.fire({
+          icon: "info",
+          title: "名稱長度不得大於 50 個字元！",
         });
         this.inputCheck.name = false;
         return result;
@@ -230,6 +246,10 @@ export default {
       return (result = true);
     },
     async handleSignUpSubmit() {
+      const formDataCheckResult = this.formDataCheck();
+      if (!formDataCheckResult) {
+        return;
+      }
       try {
         this.isProcessing = true;
         const formData = this.form;

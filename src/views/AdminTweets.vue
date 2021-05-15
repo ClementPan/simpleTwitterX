@@ -25,7 +25,7 @@ import AdminSidebar from "./../components/AdminSidebar";
 import AdminTweetsList from "./../components/AdminTweetsList";
 import { Toast } from "../utils/helpers";
 import tweetsAPI from "../apis/tweets";
-import Spinner from "./../components/Spinner";
+import Spinner from "../components/Common/Spinner";
 
 export default {
   name: "AdminTweets",

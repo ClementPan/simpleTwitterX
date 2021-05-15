@@ -31,13 +31,13 @@
 </template>
 
 <script>
-import UserSidebar from "./../components/UserSidebar";
+import UserSidebar from "./../components/Common/UserSidebar";
 import UserFollowNavtabs from "./../components/UserFollowNavtabs";
 import UserFollowingsList from "./../components/UserFollowingsList";
-import RecommendedFollowers from "./../components/RecommendedFollowers";
+import RecommendedFollowers from "./../components/Common/RecommendedFollowers";
 import { Toast } from "../utils/helpers";
 import usersAPI from "../apis/users";
-import Spinner from "./../components/Spinner";
+import Spinner from "../components/Common/Spinner";
 
 export default {
   name: "UserFollowing",

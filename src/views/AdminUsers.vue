@@ -22,7 +22,7 @@ import AdminSidebar from "./../components/AdminSidebar";
 import AdminUsersCard from "./../components/AdminUsersCard";
 import { Toast } from "../utils/helpers";
 import usersAPI from "../apis/users";
-import Spinner from "./../components/Spinner";
+import Spinner from "./../components/Common/Spinner";
 
 export default {
   name: "AdminUsers",
@@ -46,9 +46,9 @@ export default {
         const { data } = await usersAPI.getTotalUser();
         // const { tweets } = response.data;
         this.users = data;
-         this.isLoading = false;
+        this.isLoading = false;
       } catch (error) {
-         this.isLoading = false;
+        this.isLoading = false;
         console.log("error", error);
         Toast.fire({
           icon: "error",

@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import Spinner from "./Spinner";
+import Spinner from "./Common/Spinner";
 import { fromNowFilter } from "../utils/mixins";
 import { emptyImageFilter } from "../utils/mixins";
 import { Toast } from "../utils/helpers";

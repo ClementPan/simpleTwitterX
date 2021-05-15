@@ -66,8 +66,8 @@
 </template>
 
 <script>
-import UserSidebar from "../components/UserSidebar";
-import RecommededFollowers from "../components/RecommendedFollowers";
+import UserSidebar from "../components/Common/UserSidebar";
+import RecommededFollowers from "../components/Common/RecommendedFollowers";
 import { mapState } from "vuex";
 import { Toast } from "../utils/helpers";
 import socketsAPI from "../apis/socket";
@@ -104,12 +104,12 @@ export default {
             tweet: data.tweet,
             replyId: data.replyId,
             reply: data.reply,
-            type: data.type
+            type: data.type,
           },
           this.currentUser.id
         );
         this.messageList.unshift({
-          type: data.type, 
+          type: data.type,
           id: this.messageList.length + 1,
           account: data.account,
           name: data.name,

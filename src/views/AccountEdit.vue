@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import UserSidebar from "../components/UserSidebar";
+import UserSidebar from "../components/Common/UserSidebar";
 import AccountEditForm from "../components/AccountEditForm";
 
 export default {

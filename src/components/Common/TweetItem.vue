@@ -41,7 +41,7 @@
       <div class="tweetPanel">
         <div class="comments">
           <img
-            src="../assets/image/commentCount.svg"
+            src="../../assets/image/commentCount.svg"
             alt=""
             @click="showModal(localTweet.id)"
           />
@@ -53,13 +53,13 @@
           <img
             v-if="!localTweet.isLiked"
             :class="{ liked: localTweet.isLiked }"
-            src="../assets/image/likeCount.svg"
+            src="../../assets/image/likeCount.svg"
             alt=""
             @click="toggleLike(localTweet)"
           />
           <img
             v-else
-            src="../assets/image/likedLikeCount.svg"
+            src="../../assets/image/likedLikeCount.svg"
             alt=""
             @click="toggleLike(localTweet)"
           />
@@ -74,13 +74,12 @@
 </template>
 
 <script>
-import TweetReplyModal from "../components/Modal/TweetReplyModal";
-import { fromNowFilter } from "../utils/mixins";
-import { emptyImageFilter } from "../utils/mixins";
-import { Toast } from "../utils/helpers";
-import tweetsAPI from "../apis/tweets";
+import TweetReplyModal from "../Modal/TweetReplyModal";
+import { fromNowFilter } from "../../utils/mixins";
+import { emptyImageFilter } from "../../utils/mixins";
+import { Toast } from "../../utils/helpers";
+import tweetsAPI from "../../apis/tweets";
 import { mapState } from "vuex";
-// import locally
 import $ from "jquery";
 
 export default {

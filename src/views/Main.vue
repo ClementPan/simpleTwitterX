@@ -26,13 +26,13 @@
 </template>
 
 <script>
-import UserSidebar from "../components/UserSidebar";
-import RecommendedFollowers from "../components/RecommendedFollowers";
+import UserSidebar from "../components/Common/UserSidebar";
+import RecommendedFollowers from "../components/Common/RecommendedFollowers";
 import CreateTweet from "../components/Main/CreateTweet";
 import FollowingUsersTweets from "../components/Main/FollowingUsersTweets";
 import { Toast } from "../utils/helpers";
 import tweetsAPI from "../apis/tweets";
-import Spinner from "../components/Spinner";
+import Spinner from "../components/Common/Spinner";
 
 export default {
   name: "Main",

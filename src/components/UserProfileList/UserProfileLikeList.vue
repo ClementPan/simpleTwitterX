@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import TweetItem from "../TweetItem";
+import TweetItem from "../Common/TweetItem";
 import { mapState } from "vuex";
 import { Toast } from "../../utils/helpers";
 import tweetsAPI from "../../apis/tweets";
