@@ -1,5 +1,5 @@
 <template>
-  <div id="AccountEdit flex">
+  <div id="AccountEdit">
     <!-- UserSidebar -->
     <UserSidebar></UserSidebar>
     <!-- AccountEditForm -->
@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style scoped>
+#AccountEdit {
+  display: flex;
+}
 .accountEditPanel {
   flex: 1;
 }
