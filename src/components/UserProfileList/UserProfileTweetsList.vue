@@ -65,12 +65,11 @@ export default {
     };
   },
   methods: {
-    fetchUser(newVal) {
+    setUser(newVal) {
       this.user = newVal;
     },
     async fetchUserTweets(userId) {
-      // console.log("fetchUserTweets in List");
-      // console.log("fetchUser:" + userId);
+      console.log("triggered!");
       try {
         this.isLoading = true;
         const { data } = await tweetsAPI.getUserTweet(userId);
@@ -88,7 +87,6 @@ export default {
         });
         this.isLoading = false;
       } catch (error) {
-        console.log("fetchUserTweets");
         console.log(error);
         Toast.fire({
           icon: "error",
@@ -109,9 +107,10 @@ export default {
   },
   watch: {
     userData: {
-      handler: async function (newVal) {
+      handler: async function (newVal, oldVal) {
+        if (oldVal.id === newVal.id) return;
         try {
-          this.fetchUser(newVal);
+          this.setUser(newVal);
           const userId = this.user.id;
           await this.fetchUserTweets(userId);
         } catch (error) {

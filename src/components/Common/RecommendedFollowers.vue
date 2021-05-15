@@ -76,9 +76,6 @@ export default {
       this.renderAfterFollowToggle(userId);
     });
   },
-  computed: {
-    ...mapState(["currentUser"]),
-  },
   data() {
     return {
       recommendedFollowers: [],
@@ -92,7 +89,9 @@ export default {
         this.isLoading = true;
         // call api to get recommended Followers data
         const { data } = await usersAPI.getRecommendedFollowers();
-        this.recommendedFollowers = data;
+        this.recommendedFollowers = data.filter(
+          (user) => user.id !== this.currentUser.id
+        );
         this.isLoading = false;
       } catch (error) {
         this.isLoading = false;
@@ -186,7 +185,6 @@ export default {
         // getting 'user' from RecommendedFollowers
         userId = user.id;
       }
-      console.log("typeof user: " + typeof user);
 
       this.recommendedFollowers = this.recommendedFollowers.map((each) => {
         if (each.id === userId) {
@@ -199,6 +197,9 @@ export default {
         }
       });
     },
+  },
+  computed: {
+    ...mapState(["currentUser"]),
   },
 };
 </script>
