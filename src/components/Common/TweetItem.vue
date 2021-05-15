@@ -22,18 +22,25 @@
         </p>
         <span class="mx-1">&#xb7;</span>
         <p class="tweetUpdateAt">{{ localTweet.createdAt | fromNow }}</p>
+
         <!-- isMine -->
-        <button
-          class="btn deleteTweet"
-          v-if="currentUser.id === localTweet.UserId"
-          @click.stop.prevent="deleteTweet(localTweet.id)"
-        >
-          <i class="fas fa-times"></i>
-        </button>
+        <div v-if="currentUser.id === localTweet.UserId" class="edit-panel">
+          <button
+            class="btn edit"
+            @click.stop.prevent="showModal('edit', localTweet.id)"
+          >
+            <i class="fas fa-pen"></i>
+          </button>
+          <button
+            class="btn deleteTweet"
+            @click.stop.prevent="deleteTweet(localTweet.id)"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
         <!-- isMine -->
       </div>
       <div class="tweetContent">
-        <!-- <router-link to="/replydetail"> -->
         <router-link :to="`/replydetail/${localTweet.id}`">
           <p>{{ localTweet.description }}</p>
         </router-link>
@@ -43,7 +50,7 @@
           <img
             src="../../assets/image/commentCount.svg"
             alt=""
-            @click="showModal(localTweet.id)"
+            @click="showModal('reply', localTweet.id)"
           />
           <p>
             {{ localTweet.replyCount }}
@@ -69,11 +76,16 @@
         </div>
       </div>
     </div>
+    <PutTweetModal
+      @afterPutTweet="afterPutTweet"
+      :tweet="localTweet"
+    ></PutTweetModal>
     <TweetReplyModal :tweet="localTweet"></TweetReplyModal>
   </div>
 </template>
 
 <script>
+import PutTweetModal from "../Modal/PutTweetModal";
 import TweetReplyModal from "../Modal/TweetReplyModal";
 import { fromNowFilter } from "../../utils/mixins";
 import { emptyImageFilter } from "../../utils/mixins";
@@ -87,6 +99,7 @@ export default {
   mixins: [fromNowFilter, emptyImageFilter],
   components: {
     TweetReplyModal,
+    PutTweetModal,
   },
   props: {
     tweet: {
@@ -102,7 +115,7 @@ export default {
   },
   created() {
     this.localTweet = this.tweet;
-    // eventbus for afterCreateReply from
+    // eventbus for afterCreateReply from modal
     this.$bus.$on("afterCreateReply", (payload) => {
       this.afterCreateReply(payload);
     });
@@ -157,6 +170,9 @@ export default {
         this.tweet.replyCount++;
       }
     },
+    afterPutTweet(payload) {
+      this.localTweet.description = payload;
+    },
     async deleteTweet(tweetId) {
       try {
         const { data } = await tweetsAPI.deleteTweet(tweetId);
@@ -165,6 +181,9 @@ export default {
         if (data.status !== "success") {
           throw new Error();
         }
+
+        // for list
+        this.$emit("afterDeleteTweet", tweetId);
 
         // inform user
         Toast.fire({
@@ -180,11 +199,15 @@ export default {
         });
       }
     },
-    showModal(tweetId) {
-      // #tweetReplyModal-${localTweet.id}
-      $(`#tweetReplyModal-${tweetId}`).modal("show");
-      $(`#tweetReplyModal-${tweetId}`).appendTo("body");
-      console.log("Open modal");
+    showModal(target, tweetId) {
+      let modelId = "";
+      if (target === "reply") {
+        modelId = "#tweetReplyModal";
+      } else {
+        modelId = "#putTweetModal";
+      }
+      $(`${modelId}-${tweetId}`).modal("show");
+      $(`${modelId}-${tweetId}`).appendTo("body");
     },
   },
   computed: {
@@ -257,19 +280,33 @@ export default {
   line-height: 22px;
 }
 
-.deleteTweet {
+.edit-panel {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 0px;
   transform: translateY(-50%);
-  margin: 0;
-  padding: 0;
-  height: 22px;
-  width: 22px;
+  display: flex;
+  align-items: center;
 }
 
-.deleteTweet p {
-  margin: auto;
+.edit-panel .btn {
+  padding: 0;
+  padding: 3px;
+  margin: 1px;
+  border-radius: 10px;
+}
+
+.edit-panel svg {
+  padding: 3px;
+  height: 22px;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-panel .btn:hover {
+  background: #ccc;
 }
 
 .tweetContent {

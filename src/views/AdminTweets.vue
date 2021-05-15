@@ -61,7 +61,7 @@ export default {
     },
     async afterDeleteTweet(tweetId) {
       try {
-        const { data } = await tweetsAPI.deleteTweet({ tweetId });
+        const { data } = await tweetsAPI.adminDeleteTweet({ tweetId });
 
         if (data.status !== "success") {
           throw new Error(data.message);

@@ -32,7 +32,7 @@
               <textarea
                 name=""
                 id=""
-                cols="65"
+                cols="80"
                 rows="5"
                 autofocus
                 maxlength="140"

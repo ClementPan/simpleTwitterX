@@ -2,7 +2,8 @@
   <div class="container">
     <ul class="tweetList">
       <TweetItem
-        v-for="tweet in $attrs.tweets"
+        v-for="tweet in localTweets"
+        @afterDeleteTweet="afterDeleteTweet"
         :key="tweet.id"
         :tweet="tweet"
       ></TweetItem>
@@ -14,8 +15,34 @@
 import TweetItem from "../Common/TweetItem";
 export default {
   name: "FollowingUsersTweets",
+  props: {
+    tweets: {
+      type: Array,
+      required: true,
+    },
+  },
+  created() {
+    this.localTweets = this.tweets;
+  },
   components: {
     TweetItem,
+  },
+  data() {
+    return {
+      localTweets: [],
+    };
+  },
+  methods: {
+    afterDeleteTweet(tweetId) {
+      this.localTweets = this.localTweets.filter(
+        (tweet) => tweet.id !== tweetId
+      );
+    },
+  },
+  watch: {
+    tweets(newval) {
+      this.localTweets = newval;
+    },
   },
 };
 </script>
@@ -23,12 +50,10 @@ export default {
 <style scoped>
 .container {
   padding: 0;
-  /* height: calc(100% - 175px); */
   width: 100%;
 }
 
 .tweetList {
-  /* overflow-y: scroll; */
   height: 100%;
   width: 100%;
 }

@@ -8,7 +8,7 @@ export default {
   createNewTweet(payload) {
     return apiHelper.post('/tweets', payload)
   },
-  deleteTweet({ tweetId }) {
+  adminDeleteTweet({ tweetId }) {
     return apiHelper.delete(`/admin/tweets/${tweetId}`)
   },
   getUserTweet(userId) {
@@ -47,4 +47,10 @@ export default {
   unlikeTweet(tweetId) {
     return apiHelper.post(`/tweets/${tweetId}/unlike`)
   },
+  putTweet(tweetId, description) {
+    return apiHelper.put(`/tweets/${tweetId}`, { description })
+  },
+  deleteTweet(tweetId) {
+    return apiHelper.delete(`/tweets/${tweetId}`)
+  }
 }
