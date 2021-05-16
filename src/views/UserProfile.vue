@@ -51,7 +51,6 @@ export default {
     try {
       next((vm) => {
         // vue instance not created yet, use next to invoke this
-        // console.log("fetchUser @ beforeRouteEnter");
         const { id } = to.params;
         vm.fetchUser(id);
         vm.fetchingData = true;
@@ -62,7 +61,6 @@ export default {
   },
   // if entering from userProfiles
   async beforeRouteUpdate(to, from, next) {
-    // console.log("fetchUser @ beforeRouteUpdate");
     try {
       if (this.fetchingData) next();
       const { id } = to.params;
@@ -81,8 +79,6 @@ export default {
   },
   methods: {
     async fetchUser(userId) {
-      // console.log("fetchUser in UserProfile");
-      // console.log("fetchUser:" + userId);
       try {
         const { data } = await usersAPI.getUser(userId);
         this.user = data;
@@ -107,18 +103,6 @@ export default {
         }
       });
     },
-    // afterCreateReply(tweetId) {
-    //   this.tweets = this.tweets.map((tweet) => {
-    //     if (tweet.id === tweetId) {
-    //       return {
-    //         ...tweet,
-    //         replyCount: tweet.replyCount + 1,
-    //       };
-    //     } else {
-    //       return tweet;
-    //     }
-    //   });
-    // },
   },
   computed: {
     ...mapState(["currentUser"]),

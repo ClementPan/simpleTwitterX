@@ -26,15 +26,15 @@ export default {
     return apiHelper.get(`/users/${userId}/followings`)
   },
   followUser(userId) {
-    return apiHelper.post('/followships', { id: userId })
+    return apiHelper.post(`/users/${userId}/followships`)
   },
   unfollowUser(userId) {
-    return apiHelper.delete(`/followships/${userId}`)
+    return apiHelper.delete(`/users/${userId}/followships`)
   },
-  subscribeUser(payload) {
-    return apiHelper.post('/subscriptions', payload)
+  subscribeUser(userId) {
+    return apiHelper.post(`/users/${userId}/subscriptions`)
   },
   unsubscribeUser(userId) {
-    return apiHelper.delete(`/subscriptions/${userId}`)
+    return apiHelper.delete(`/users/${userId}/subscriptions`)
   }
 }

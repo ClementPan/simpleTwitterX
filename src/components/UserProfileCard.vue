@@ -324,9 +324,9 @@ export default {
     },
     async addSubscribe(user) {
       try {
-        // call api to toggle isFolloweda
+        // call api to toggle isFollowed
         this.isProcessing = true;
-        const payload = { id: user.id };
+        const payload = user.id;
         const { data } = await usersAPI.subscribeUser(payload);
 
         if (data.status !== "success") {
@@ -358,7 +358,8 @@ export default {
     async deleteSubscribe(user) {
       try {
         this.isProcessing = true;
-        const { data } = await usersAPI.unsubscribeUser(user.id);
+        const payload = user.id;
+        const { data } = await usersAPI.unsubscribeUser(payload);
 
         if (data.status !== "success") {
           throw new Error(data.message);
@@ -393,8 +394,6 @@ export default {
   watch: {
     userData: {
       handler: function () {
-        console.log("watch userData");
-        console.log(this.userData);
         this.localUserData = this.userData;
       },
       deep: true,
@@ -435,7 +434,6 @@ export default {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   z-index: 999;
-  /* overflow: hidden; */
   object-fit: cover;
 }
 
@@ -500,7 +498,6 @@ export default {
 }
 
 button {
-  /* border: 1px solid var(--orange); */
   border-radius: 100px;
   color: var(--orange);
   font-weight: 700;
