@@ -53,7 +53,7 @@
     </div>
 
     <div class="showMore">
-      <button class="btn" @click="disabledButtonAlert">顯示更多</button>
+      <button class="btn" @click="fetchRecommendedFollowers">顯示更多</button>
     </div>
   </div>
 </template>
@@ -285,7 +285,7 @@ button {
 }
 
 .showMore .btn {
-  padding: 0;
+  padding: 4px 8px;
   border: none;
   font-weight: 400;
 }
