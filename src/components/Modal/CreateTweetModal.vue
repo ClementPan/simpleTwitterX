@@ -101,11 +101,13 @@ export default {
         // call api to create new tweet: 回傳 tweet id?
         const { data } = await tweetsAPI.createNewTweet(payload);
 
+        console.log(data);
+
         if (data.status !== "success") {
           throw new Error(data.message);
         }
 
-        const { id, UserId, createdAt, description, updatedAt } = data.tweet[0];
+        const { id, UserId, createdAt, description, updatedAt } = data.tweet;
 
         const { account, name, avatar } = this.currentUser;
         const newTweet = {
