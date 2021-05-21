@@ -45,7 +45,7 @@ export default {
     return apiHelper.post(`/tweets/${tweetId}/like`)
   },
   unlikeTweet(tweetId) {
-    return apiHelper.post(`/tweets/${tweetId}/unlike`)
+    return apiHelper.delete(`/tweets/${tweetId}/like`)
   },
   putTweet(tweetId, description) {
     return apiHelper.put(`/tweets/${tweetId}`, { description })
