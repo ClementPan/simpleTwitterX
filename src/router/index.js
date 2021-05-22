@@ -144,7 +144,8 @@ router.beforeEach(async (to, from, next) => {
 
   if (tokenInLocalStorage && tokenInLocalStorage !== tokenInStore) {
     // check currentUser with server
-    console.log('SERVER-CHECK: tokenInLocalStorage !== tokenInStore')
+    console.log('[Token-check]: token no match!')
+    console.log('[Token-check]: check with server!')
     isAuthenticated = await store.dispatch('fetchCurrentUser')
   }
 

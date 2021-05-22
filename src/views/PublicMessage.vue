@@ -109,6 +109,7 @@ export default {
       });
     },
     "users count": function (data) {
+      console.log("USERS COUNT!");
       const { users: onlineUsers, userCount: onlineUsersCount } = data;
       this.onlineUsers = onlineUsers;
       this.onlineUsersCount = onlineUsersCount;
@@ -125,9 +126,9 @@ export default {
   methods: {
     joinPublicRoom() {
       this.$socket.emit("join", {
+        userId: this.currentUser.id,
         username: this.currentUser.name,
         roomId: 4,
-        userId: this.currentUser.id,
       });
       this.isProcessing = false;
     },

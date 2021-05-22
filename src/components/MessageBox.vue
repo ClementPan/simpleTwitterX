@@ -54,7 +54,7 @@
     </div>
     <div class="meesagePanel">
       <input
-        @keyup.enter="sendMessage"
+        @keyup.enter="sendMessageHandler"
         id="textInput"
         placeholder="輸入訊息..."
         type="text"
@@ -67,7 +67,7 @@
         :disabled="currentChat.userId === undefined"
         type="submit"
         class="btn sendBtn"
-        @click="sendMessage"
+        @click="sendMessageHandler"
       >
         <img src="../assets/image/send.svg" alt="" />
       </button>
@@ -114,52 +114,34 @@ export default {
     };
   },
   updated() {
-    console.log("updated");
     this.updateScroll();
   },
   methods: {
-    sendMessage: function () {
-      const message = this.message;
-      if (!this.message) {
+    messageCheck(message) {
+      if (!message.length) {
         Toast.fire({
           icon: "error",
           title: "尚未輸入訊息!",
         });
+        return false;
+      }
+      return true;
+    },
+    sendMessageHandler: function () {
+      const message = this.message;
+      const messageCheckResult = this.messageCheck(message);
+      if (!messageCheckResult) {
         return;
       }
 
       const newMessage = !this.messageList.length;
       console.log("atPublic: " + this.atPublic);
 
-      if (this.atPublic) {
-        this.$socket.emit(
-          "chat message",
-          {
-            roomId: this.currentRoomId,
-            userId: this.currentUser.id,
-            newMessage,
-            message,
-          },
-          () => {
-            console.log("currentRoomId: " + this.currentRoomId);
-            console.log(`private chat message, new: ${newMessage}`);
-          }
-        );
-      } else {
-        this.$socket.emit(
-          "private chat message",
-          {
-            roomId: this.currentRoomId,
-            userId: this.currentUser.id,
-            newMessage,
-            message,
-          },
-          () => {
-            console.log("currentRoomId: " + this.currentRoomId);
-            console.log(`private chat message, new: ${newMessage}`);
-          }
-        );
-      }
+      const messageMode = this.atPublic
+        ? "chat message"
+        : "private chat message";
+
+      this.sendMessage(messageMode, message, newMessage);
 
       this.message = "";
 
@@ -167,6 +149,22 @@ export default {
         icon: "success",
         title: "訊息已發送!",
       });
+    },
+    sendMessage(messageMode, message, newMessage) {
+      console.log("messageMode: " + messageMode);
+      console.log("message: " + message);
+      console.log("newMessage: " + newMessage);
+      return this.$socket.emit(
+        messageMode,
+        {
+          newMessage,
+          message,
+        },
+        () => {
+          console.log("currentRoomId: " + this.currentRoomId);
+          console.log(`private chat message, new: ${newMessage}`);
+        }
+      );
     },
     toggleIsProcessing() {
       this.isProcessing = !this.isProcessing;
