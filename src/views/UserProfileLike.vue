@@ -1,5 +1,5 @@
 <template>
-  <div id="userProfileLike flex">
+  <div id="userProfileLike">
     <!-- UserSidebar -->
     <UserSidebar />
     <div class="mainSection">
@@ -124,6 +124,7 @@ export default {
 
 <style scoped>
 #userProfileLike {
+  display: flex;
   min-height: 100vh;
   justify-content: center;
 }

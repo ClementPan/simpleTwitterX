@@ -122,7 +122,7 @@ export default {
       console.log(data);
     },
     "private chat message": async function (msg) {
-      console.log("private chat message");
+      console.log("private chat message: " + msg);
 
       // 1. if msg.userId === currentUser.id, me sending msg to others
       if (msg.userId === this.currentUser.id) {
@@ -335,7 +335,18 @@ export default {
     },
     // Step3: currentUser join chat room
     joinPrivateRoom(roomId) {
+      // session update check
+      const { rooms } = JSON.parse(sessionStorage.getItem("rooms"));
+      const sessionRoomId = rooms[2];
+      if (sessionRoomId !== roomId) {
+        console.log("Session update needed!");
+        this.$bus.$emit("updateSession", roomId);
+      }
+
       console.log("join private room: " + roomId);
+
+      this.$bus.$emit("updateSession", roomId);
+
       this.$socket.emit("join", {
         username: this.currentUser.name,
         roomId,

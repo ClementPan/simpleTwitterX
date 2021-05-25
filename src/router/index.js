@@ -152,6 +152,7 @@ router.beforeEach(async (to, from, next) => {
   const pathsWithoutAuthentication = ['sign-in', 'sign-up', 'admin-sign-in']
 
   console.log('isAuthenticated: ' + isAuthenticated)
+
   // check with server when !isAuthenticated && trying to open pathsWithoutAuthentication
   if (!isAuthenticated && !pathsWithoutAuthentication.includes(to.name)) {
     console.log('no token!')

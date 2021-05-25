@@ -162,7 +162,7 @@ export default {
         },
         () => {
           console.log("currentRoomId: " + this.currentRoomId);
-          console.log(`private chat message, new: ${newMessage}`);
+          console.log(`chat message, new: ${newMessage}`);
         }
       );
     },

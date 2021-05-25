@@ -113,6 +113,7 @@ export default {
       const { users: onlineUsers, userCount: onlineUsersCount } = data;
       this.onlineUsers = onlineUsers;
       this.onlineUsersCount = onlineUsersCount;
+      this.message = "";
     },
     message: function (data) {
       this.messageList.push({
@@ -125,6 +126,17 @@ export default {
   },
   methods: {
     joinPublicRoom() {
+      // session update check
+      const { rooms } = JSON.parse(sessionStorage.getItem("rooms"));
+      const sessionRoomId = rooms[2];
+      if (sessionRoomId !== "4") {
+        console.log("Session update needed!");
+        this.$bus.$emit("updateSession", 4);
+      }
+
+      console.log("No session update needed!");
+      console.log("joinPublicRoom: id 4");
+
       this.$socket.emit("join", {
         userId: this.currentUser.id,
         username: this.currentUser.name,

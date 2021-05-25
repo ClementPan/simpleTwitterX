@@ -1,5 +1,5 @@
 <template>
-  <div id="userProfileReply flex">
+  <div id="userProfileReply">
     <!-- // UserSidebar -->
     <UserSidebar />
     <div class="mainSection">
@@ -124,6 +124,7 @@ export default {
 
 <style scoped>
 #userProfileReply {
+  display: flex;
   min-height: 100vh;
   justify-content: center;
 }

@@ -35,6 +35,7 @@ export default new Vuex.Store({
       state.token = ''
       localStorage.removeItem('token')
       sessionStorage.removeItem('rooms')
+      console.log('[RevokeAuthentication completed]')
     },
     setCurrentRoomId(state, newRoomId) {
       state.currentRoomId = newRoomId

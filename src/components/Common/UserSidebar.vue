@@ -231,7 +231,7 @@ export default {
       $(".modal-backdrop").hide();
     },
     setCurrentLocation(location) {
-      console.log("location: " + location);
+      // console.log("location: " + location);
       switch (location) {
         case "main":
           this.main = true;

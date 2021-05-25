@@ -8,16 +8,26 @@ import '@fortawesome/fontawesome-free/js/all.js'
 import store from './store'
 import './utils/bus'
 import VueSocketIO from 'vue-socket.io'
+import SocketIO from "socket.io-client";
+
+const baseURL = 'https://simple-twitter-api-2021.herokuapp.com/'
+const token = localStorage.getItem('token')
+
+const connection = new SocketIO(baseURL, {
+  reconnectionDelayMax: 10000,
+  auth: {
+    token: token
+  }
+})
 
 Vue.use(new VueSocketIO({
   debug: true,
-  connection: 'https://simple-twitter-api-2021.herokuapp.com/',
+  connection,
   vuex: {
     store,
     actionPrefix: 'SOCKET_',
-    mutationPrefix: 'SOCKET_',
+    mutationPrefix: 'SOCKET_'
   },
-  options: { auth: localStorage.getItem('token') }
 }))
 
 new Vue({

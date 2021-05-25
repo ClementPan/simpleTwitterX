@@ -69,7 +69,6 @@ export default {
       this.user = newVal;
     },
     async fetchUserTweets(userId) {
-      console.log("triggered!");
       try {
         this.isLoading = true;
         const { data } = await tweetsAPI.getUserTweet(userId);
