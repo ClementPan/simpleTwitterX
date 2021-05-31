@@ -19,7 +19,7 @@ export default {
   sockets: {
     "set session": function (data) {
       console.log("[App.vue - SESSION]: SET SESSION!");
-      console.log(data);
+      // console.log(data);
       console.log("-----------");
       sessionStorage.setItem("rooms", JSON.stringify(data));
     },
@@ -27,6 +27,7 @@ export default {
   methods: {
     startSession() {
       const token = localStorage.getItem("token");
+      console.log("token exists: ", token ? true : false);
       if (!token) return;
       console.log("[App.vue - SESSION]: Starting session...");
       const rooms = JSON.parse(sessionStorage.getItem("rooms"));
@@ -40,7 +41,10 @@ export default {
         this.$socket.emit("start session", rooms, this.currentUser.id);
       } else {
         console.log("[App.vue - SESSION]: no rooms exist");
-        console.log("[App.vue - SESSION]: emit start session");
+        console.log("[App.vue - SESSION]: userId " + this.currentUser.id);
+        console.log(
+          "[App.vue - SESSION]: emit start session with { rooms: null }"
+        );
         this.$socket.emit(
           "start session",
           { rooms: null },
@@ -59,6 +63,7 @@ export default {
     currentUser: {
       deep: true,
       handler: function () {
+        console.log("[App.vue - watch]: currentUser data changed");
         this.startSession();
       },
     },

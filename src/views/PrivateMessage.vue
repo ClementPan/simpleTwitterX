@@ -258,17 +258,26 @@ export default {
 
     // click old chat, fetch chat data, join room
     async passChatData(user) {
+      const { roomId, userId } = user;
+
+      if (this.currentChat.userId === userId) {
+        console.log("[PrivateMessage] Already in the message box!");
+        return;
+      }
+
+      console.log("[PrivateMessage] passing Chat Data to message box");
+      // user => account, avatar, lastMessage, lastTime, name, roomId, userId
+      this.currentChat = user;
+
       // tell messageBox to show "processing"
       this.$refs.messageBox.toggleIsProcessing();
 
-      console.log("leave room: " + this.currentRoomId);
-      this.$socket.emit("leave", this.currentUser.id, this.currentRoomId);
-      this.$store.commit("setCurrentRoomId", undefined);
-
-      console.log("passChatData");
-      // user => account, avatar, lastMessage, lastTime, name, roomId, userId
-      const { roomId } = user;
-      this.currentChat = user;
+      // if already in certain room
+      if (this.currentRoomId) {
+        console.log("leave room: " + this.currentRoomId);
+        this.$socket.emit("leave", this.currentUser.id, this.currentRoomId);
+        this.$store.commit("setCurrentRoomId", undefined);
+      }
 
       try {
         const { data } = await socketsAPI.getRoom(roomId);
@@ -336,16 +345,16 @@ export default {
     // Step3: currentUser join chat room
     joinPrivateRoom(roomId) {
       // session update check
-      const { rooms } = JSON.parse(sessionStorage.getItem("rooms"));
-      const sessionRoomId = rooms[2];
-      if (sessionRoomId !== roomId) {
-        console.log("Session update needed!");
-        this.$bus.$emit("updateSession", roomId);
-      }
+      // const { rooms } = JSON.parse(sessionStorage.getItem("rooms"));
+      // const sessionRoomId = rooms[2];
+      // if (sessionRoomId !== roomId) {
+      //   console.log("Session update needed!");
+      //   // this.$bus.$emit("updateSession", roomId);
+      // }
 
       console.log("join private room: " + roomId);
 
-      this.$bus.$emit("updateSession", roomId);
+      // this.$bus.$emit("updateSession", roomId);
 
       this.$socket.emit("join", {
         username: this.currentUser.name,

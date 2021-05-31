@@ -157,6 +157,7 @@ export default {
       return this.$socket.emit(
         messageMode,
         {
+          roomId: this.currentRoomId,
           newMessage,
           message,
         },
@@ -171,6 +172,11 @@ export default {
     },
     updateScroll() {
       this.$refs.messageList.scrollTop = this.$refs.messageList.scrollHeight;
+    },
+  },
+  watch: {
+    currentRoomId() {
+      console.log("new currentRoomId: " + this.currentRoomId);
     },
   },
   computed: {

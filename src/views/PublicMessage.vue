@@ -72,8 +72,7 @@ export default {
     };
   },
   async mounted() {
-    this.$socket.emit("leave");
-    this.$store.commit("setCurrentRoomId", 4);
+    // this.$socket.emit("leave");
     try {
       this.isProcessing = true;
       this.$refs.messageBox.toggleIsProcessing();
@@ -85,7 +84,8 @@ export default {
 
       this.$refs.messageBox.toggleIsProcessing();
       // join room
-      this.joinPublicRoom();
+      // this.joinPublicRoom();
+      this.isProcessing = false;
     } catch (error) {
       this.isProcessing = false;
       console.log(error);
@@ -125,28 +125,26 @@ export default {
     },
   },
   methods: {
-    joinPublicRoom() {
-      // session update check
-      const { rooms } = JSON.parse(sessionStorage.getItem("rooms"));
-      const sessionRoomId = rooms[2];
-      if (sessionRoomId !== "4") {
-        console.log("Session update needed!");
-        this.$bus.$emit("updateSession", 4);
-      }
-
-      console.log("No session update needed!");
-      console.log("joinPublicRoom: id 4");
-
-      this.$socket.emit("join", {
-        userId: this.currentUser.id,
-        username: this.currentUser.name,
-        roomId: 4,
-      });
-      this.isProcessing = false;
-    },
+    // joinPublicRoom() {
+    //   // session update check
+    //   const { rooms } = JSON.parse(sessionStorage.getItem("rooms"));
+    //   const sessionRoomId = rooms[2];
+    //   if (sessionRoomId !== "4") {
+    //     console.log("Session update needed!");
+    //     this.$bus.$emit("updateSession", 4);
+    //   }
+    //   console.log("No session update needed!");
+    //   console.log("joinPublicRoom: id 4");
+    //   this.$socket.emit("join", {
+    //     userId: this.currentUser.id,
+    //     username: this.currentUser.name,
+    //     roomId: 4,
+    //   });
+    //   this.isProcessing = false;
+    // },
   },
   computed: {
-    ...mapState(["currentUser", "currentRoomId"]),
+    ...mapState(["currentUser"]),
   },
 };
 </script>
