@@ -2,6 +2,10 @@
 
 Demo: https://clementpan.github.io/simpleTwitterX
 
+## Description
+
+### Simple-twitterX is a modified version of the former collaborative project "Simple Twitter", who are bassically the same social website, but Simple-twitterX is my personal modified version.
+
 ## Project setup
 ```
 npm install
