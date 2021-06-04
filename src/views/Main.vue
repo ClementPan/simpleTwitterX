@@ -128,4 +128,9 @@ export default {
 .mainSection {
   overflow-y: scroll;
 }
+
+.title {
+  background-color: #fff;
+  z-index: 100;
+}
 </style>
